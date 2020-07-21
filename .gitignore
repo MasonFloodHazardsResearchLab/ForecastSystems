@@ -1,1 +1,5 @@
 /PotomacRiver/Data/AHPS.*.csv
+/PotomacRiver/Metrics/*.csv
+/PotomacRiver/Metrics/*.ipynb
+/PotomacRiver/Metrics/*.png
+calib_tools.py
