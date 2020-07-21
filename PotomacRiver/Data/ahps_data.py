@@ -1,6 +1,11 @@
 # The purpose of this code is to download and save
 # stage and streamflow forecast data from AHPS stations
+# Author: Gustavo Coelho
+# Jul, 2020
 
+
+######################################################################
+## Library
 import os
 import matplotlib.pyplot as plt
 from matplotlib.dates import DayLocator, HourLocator, DateFormatter
@@ -12,9 +17,18 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timezone, timedelta
 
 
-# list with ahps station codes
-station_list = pd.read_csv('AHPS_Potomac.csv', dtype={'ahps':str})
+######################################################################
+## Settings
 
+# AHPS stations list (minimum info: ahps(station code), usgs_id)
+ahps_list = 'AHPS_Potomac.csv'
+
+# list with ahps station codes
+station_list = pd.read_csv(f'{ahps_list}', dtype={'ahps':str})
+
+
+######################################################################
+## Main
 
 # Function to retrieve AHPS data and return a Data Frame
 def AHPS_data(gage):
